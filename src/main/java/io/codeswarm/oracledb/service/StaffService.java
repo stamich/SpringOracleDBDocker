@@ -7,9 +7,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Set;
 
-@Service
 public interface StaffService {
-
     List<Staff> findAll();
-//    List<Staff> findAllByStaffRoles(Set<StaffRole> staffRoles);
+    List<Staff> findDistinctByStaffRolesIn(Set<StaffRole> staffRoles);
+    List<Staff> findStaffByActive(Boolean active);
+    Staff findStaffById(Long id);
+    void create(Staff staff);
+    void update(Staff staff);
+    void deleteStaffById(Long id);
+    boolean isStaffEmailUnique(Long id, String email);
 }

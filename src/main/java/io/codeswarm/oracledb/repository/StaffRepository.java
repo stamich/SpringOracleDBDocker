@@ -10,7 +10,9 @@ import java.util.Set;
 
 @Repository
 public interface StaffRepository extends JpaRepository<Staff, Long> {
-
     List<Staff> findAll();
-//    List<Staff> findAllByStaffRoles(Set<StaffRole> staffRoles);
+    List<Staff> findDistinctByStaffRolesIn(Set<StaffRole> staffRoles);
+    List<Staff> findStaffByActive(Boolean active);
+    Staff findStaffById(Long id);
+    void deleteStaffById(Long id);
 }
