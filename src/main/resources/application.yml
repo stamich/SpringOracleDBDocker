@@ -1,18 +1,26 @@
-#spring:
-#  application:
-#    name: oracle store
-#  datasource:
-#    url: jdbc:oracle:thin:@localhost:51521:XE
-#    username: store
-#    password: password
-#    driver-class-name: oracle.jdbc.OracleDriver
-#    hikari:
-#      minimum-idle: 5
-#      maximum-pool-size: 20
-#      idle-timeout: 30000
-#      max-lifetime: 2000000
-#      connection-timeout: 30000
-#      pool-name: HikariPoolBooks
-#  jpa:
-#    generate-ddl: true
-#    show-sql: true
+spring:
+  application:
+    name: oracle store
+  datasource:
+    url: jdbc:oracle:thin:@localhost:51521:XE
+    username: store
+    password: password
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      max-lifetime: 2000000
+      connection-timeout: 30000
+      pool-name: HikariPoolBooks
+  jpa:
+    generate-ddl: true
+    show-sql: true
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.hibernate: DEBUG
+  file:
+    clean-history-on-start: true
+    name: oracle_test.log
