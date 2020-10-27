@@ -1,0 +1,19 @@
+version: "3.8"
+
+networks:
+  default:
+    external:
+      name: backend
+services:
+  mymoviedb:
+    image: oracle/database:19.3.0-ee
+    container_name: oracle_19_3
+    ports:
+      - 1521:1521
+  movie-app-image:
+    image: oracle-db-servis
+    container_name: oracle-db-servis
+    ports:
+      - 8080:8080
+    links:
+      - oracledbservis
