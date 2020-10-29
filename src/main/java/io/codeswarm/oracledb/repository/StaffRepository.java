@@ -14,5 +14,6 @@ public interface StaffRepository extends JpaRepository<Staff, Long> {
     List<Staff> findDistinctByStaffRolesIn(Set<StaffRole> staffRoles);
     List<Staff> findStaffByActive(Boolean active);
     Staff findStaffById(Long id);
+    Staff findStaffByEmail(String email);
     void deleteStaffById(Long id);
 }
