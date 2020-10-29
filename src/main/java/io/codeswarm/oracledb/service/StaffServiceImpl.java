@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -34,6 +35,12 @@ public class StaffServiceImpl implements StaffService {
     @Override
     public List<Staff> findStaffByActive(Boolean active) {
         return staffRepository.findStaffByActive(active);
+    }
+
+    @Override
+    public Staff findById(Long id) {
+        return Optional.ofNullable(staffRepository.findStaffById(id))
+                .orElse(new Staff());
     }
 
     @Override
