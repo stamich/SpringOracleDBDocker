@@ -1,5 +1,6 @@
 package io.codeswarm.oracledb.controller;
 
+import io.codeswarm.oracledb.exception.NoDataException;
 import io.codeswarm.oracledb.model.Staff;
 import io.codeswarm.oracledb.model.StaffRole;
 import io.codeswarm.oracledb.service.StaffService;
@@ -52,11 +53,11 @@ public class StaffController {
     }
 
     @GetMapping("/byId/{id}")
-    public ResponseEntity<Staff> getOneById(@PathVariable("id") Long id) {
-        Staff staff = staffService.findById(id);
-        if (staff == null) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
+    public ResponseEntity<Staff> getOneById(@PathVariable("id") Long id) throws NoDataException {
+        Staff staff = staffService.findById(id).orElseThrow(() -> new NoDataException(id));
+//        if (staff == null) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
         return new ResponseEntity<>(staff, HttpStatus.FOUND);
     }
 

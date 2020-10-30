@@ -38,9 +38,9 @@ public class StaffServiceImpl implements StaffService {
     }
 
     @Override
-    public Staff findById(Long id) {
-        return Optional.ofNullable(staffRepository.findStaffById(id))
-                .orElse(new Staff());
+    public Optional<Staff> findById(Long id) {
+        return Optional.ofNullable(staffRepository.findById(id))
+                .orElse(Optional.of(new Staff()));
     }
 
     @Override

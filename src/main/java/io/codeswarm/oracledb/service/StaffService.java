@@ -12,7 +12,7 @@ public interface StaffService {
     List<Staff> findAll();
     List<Staff> findDistinctByStaffRolesIn(Set<StaffRole> staffRoles);
     List<Staff> findStaffByActive(Boolean active);
-    Staff findById(Long id);
+    Optional<Staff> findById(Long id);
     Staff findStaffById(Long id);
     Staff findStaffByEmail(String email);
     void create(Staff staff);
