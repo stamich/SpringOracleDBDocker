@@ -9,13 +9,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>io.codeswarm</groupId>
-    <artifactId>oracledb</artifactId>
+    <artifactId>store</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>oracledb</name>
+    <name>Store</name>
     <description>Oracle Database Application</description>
 
     <properties>
-        <java.version>15</java.version>
+        <java.version>11</java.version>
     </properties>
 
     <dependencies>
@@ -102,8 +102,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>15</source>
-                    <target>15</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
         </plugins>
