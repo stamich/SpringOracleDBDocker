@@ -4,6 +4,7 @@ import io.codeswarm.oracledb.model.Staff;
 import io.codeswarm.oracledb.model.StaffRole;
 import io.codeswarm.oracledb.service.StaffService;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -28,7 +29,7 @@ public class StaffControllerTest {
     @Mock
     private StaffService staffService;
 
-    @BeforeAll
+    @BeforeEach
     public void setUp() {
         MockitoAnnotations.initMocks(this);
     }
@@ -55,6 +56,6 @@ public class StaffControllerTest {
         ResponseEntity<List<Staff>> result = staffController.getAll();
 
         //then
-        assertThat(result.getStatusCodeValue()).isEqualTo(200);
+        assertThat(result.getStatusCodeValue()).isEqualTo(204);
     }
 }
