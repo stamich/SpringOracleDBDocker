@@ -14,9 +14,9 @@ spring:
       connection-timeout: 30000
       pool-name: HikariPoolBooks
   jpa:
-    generate-ddl: false
+    generate-ddl: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: true
     properties:
       hibernate:
