@@ -58,4 +58,34 @@ public class StaffControllerTest {
         //then
         assertThat(result.getStatusCodeValue()).isEqualTo(204);
     }
+
+    @Test
+    public void getAllWithRolesTest() {
+
+    }
+
+    @Test
+    public void getAllActiveTest() {
+
+    }
+
+    @Test
+    public void getOneByIdTest() {
+
+    }
+
+    @Test
+    public void getOneByEmailTest() {
+
+    }
+
+    @Test
+    public void createTest() {
+
+    }
+
+    @Test
+    public void updateTest() {
+
+    }
 }
