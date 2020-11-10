@@ -62,6 +62,15 @@ public class StaffControllerTest {
     @Test
     public void getAllWithRolesTest() {
 
+        //given
+        Set<StaffRole> set = new HashSet<>();
+        set.add(StaffRole.CEO);
+
+        //when
+        ResponseEntity<List<Staff>> result = staffController.getAllWithRoles(set);
+
+        //then
+        assertThat(result.getStatusCodeValue()).isEqualTo(204);
     }
 
     @Test
